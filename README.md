@@ -1,44 +1,57 @@
 # 🛒 QuickBuy – E-Commerce Platform
 
 QuickBuy is a full-stack **Next.js application** that allows users to browse products, manage their accounts via **Clerk**, and for authorized sellers to showcase their products.  
-The platform integrates **Inngest** for event-driven workflows and **MongoDB** for database storage.  
+The platform integrates **Inngest** for event-driven workflows and **MongoDB** for database storage.
 
 ---
 
 ## ✨ Features
 
-- 👤 **User Authentication & Roles** powered by **Clerk**  
-- 🛍️ **Seller Dashboard** – visible only for accounts with seller role  
-- 📦 Product management (add, update, delete)  
-- 📑 Event-driven workflows using **Inngest** (sync user creation, updates, and deletions)  
-- 🗄️ Data persistence with **MongoDB Atlas**  
-- 🌐 Built as a **Next.js full-stack app** (frontend + backend in one)  
+- 👤 **User Authentication & Roles** powered by **Clerk**
+- 🛍️ **Seller Dashboard** – visible only for accounts with seller role
+- 📦 Product management (add, update, delete)
+- 📑 Event-driven workflows using **Inngest** (sync user creation, updates, and deletions)
+- 🗄️ Data persistence with **MongoDB Atlas**
+- 🌐 Built as a **Next.js full-stack app** (frontend + backend in one)
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend & Backend**: Next.js (App Router)  
-- **Authentication**: Clerk (User management, roles)  
-- **Database**: MongoDB Atlas with Mongoose ODM  
-- **Events**: Inngest (handling user sync from Clerk → MongoDB)  
-- **Hosting**: Vercel (Next.js full-stack deployment)  
+- **Frontend & Backend**: Next.js (App Router)
+- **Styling**: TailwindCSS
+- **Authentication**: Clerk (User management, roles)
+- **Database**: MongoDB Atlas with Mongoose ODM
+- **Events**: Inngest (handling user sync from Clerk → MongoDB)
+- **Hosting**: Vercel (Next.js full-stack deployment)
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home Page](./public/screenshots/home.png)
+
+### 📦 Seller Dashboard
+
+![Seller Dashboard](./public/screenshots/seller-dashboard.png)
 
 ---
 
 ## ⚙️ DevOps & System Design
 
-- **Deployment**:  
-  - Hosted on **Vercel** (frontend + backend in one project)  
-  - MongoDB Atlas for cloud database  
-- **Monitoring & Observability**:  
-  - Inngest logs for event processing  
-  - MongoDB Atlas monitoring tools for queries and cluster health  
-- **System Design Principles**:  
-  - **RBAC (Role-Based Access Control)** for seller dashboard  
-  - **Event-driven architecture** (Clerk webhooks trigger Inngest → MongoDB updates)  
-  - Stateless API routes in Next.js for scalability  
-  - Optimized MongoDB schema for user and product data  
+- **Deployment**:
+  - Hosted on **Vercel** (frontend + backend in one project)
+  - MongoDB Atlas for cloud database
+- **Monitoring & Observability**:
+  - Inngest logs for event processing
+  - MongoDB Atlas monitoring tools for queries and cluster health
+- **System Design Principles**:
+  - **RBAC (Role-Based Access Control)** for seller dashboard
+  - **Event-driven architecture** (Clerk webhooks trigger Inngest → MongoDB updates)
+  - Stateless API routes in Next.js for scalability
+  - Optimized MongoDB schema for user and product data
 
 ---
 
@@ -48,9 +61,9 @@ QuickBuy uses **MongoDB Atlas** for storing **users** and **products**.
 
 ### 🔌 Connecting to MongoDB Atlas
 
-1. Create a [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account.  
-2. Setup a cluster and whitelist IP or allow `0.0.0.0/0`.  
-3. Create a database user.  
+1. Create a [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account.
+2. Setup a cluster and whitelist IP or allow `0.0.0.0/0`.
+3. Create a database user.
 4. Copy your **MongoDB URI**:
 
 mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/quickbuy
@@ -64,7 +77,6 @@ CLERK_SECRET_KEY="your-clerk-secret"
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="your-clerk-publishable-key"
 INNGEST_SIGNING_KEY="your-inngest-signing-key"
 INNGEST_EVENT_KEY="your-inngest-event-key"
-
 
 6. Example `db.js` connection:
 
@@ -169,9 +181,9 @@ PASS  tests/api/products.test.js
 PASS  tests/api/auth.test.js
 PASS  tests/inngest/userSync.test.js
 
-Test Suites: 3 passed, 3 total  
-Tests:       28 passed, 28 total  
-Snapshots:   0 total  
+Test Suites: 3 passed, 3 total
+Tests:       28 passed, 28 total
+Snapshots:   0 total
 Time:        8.214s
 
 
@@ -215,3 +227,4 @@ For direct inquiries, see my portfolio.
 
 
 
+```
